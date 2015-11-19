@@ -50,7 +50,7 @@ GSSAPIAuthentication=no
 Ssh to remote and execute command
 ---------------------------------
 ```bash
-ssh sshtarget "touch /tmp/sshtest"
+ssh sshalias "touch /tmp/sshtest"
 ```
 
 
