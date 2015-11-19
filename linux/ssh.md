@@ -33,6 +33,7 @@ mv mykey.key .ssh/authorized_keys
 rm mykey.key
 ```
 
+
 Configure connect to remote machine with custom settings
 --------------------------------------------------------
 
@@ -44,6 +45,14 @@ user ruser
 hostname sshtarget
 GSSAPIAuthentication=no
 ```
+
+
+Ssh to remote and execute command
+---------------------------------
+```bash
+ssh sshtarget "touch /tmp/sshtest"
+```
+
 
 Getting access to a webserver on an internal net
 ------------------------------------------------
@@ -59,6 +68,7 @@ ps -ax|grep iserver
 # find the pid and kill it.
 kill -9 pid
 ```
+
 
 Mounting a filesystem on a server on another network
 ----------------------------------------------------
