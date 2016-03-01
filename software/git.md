@@ -1,6 +1,8 @@
 Git
 ===
 
+To set up a git friendly prompt on linux, see [bashrc](../linux/bashrc.md).
+
 Reattach detached head
 ----------------------
 
