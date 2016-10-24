@@ -134,21 +134,22 @@ net use Z: \\host-vm-name\username
 	1. If you do not already have a id_rsa.pub, generate one: ```ssh-keygen```
 	2. ```scp .ssh/id_rsa.pub host-vm-name:/home/username/host-vm-name.key```.
 	3. ```ssh host-vm-name```.
-	4. ```cat host-vm-name.key > .ssh/authorized_keys```
+	4. ```cat host-vm-name.key > .ssh/authorized_keys``` (if the folder does not exist, do 5.4 instead of later).
 	5. ```rm host-vm-name.key```
 	6. <kbd>^D</kbd>
 3. Log into your vm: ```ssh host-vm-name```.
-4. Setting your preferred editor: ```sudo update-alternatives --config editor```.
-5. Setup visudo.
+4. Generate a ssh key: ```ssh-keygen```.
+5. Setting your preferred editor: ```sudo update-alternatives --config editor```.
+6. Setup visudo.
 	1. ```sudo visudo```
 	2. Add: ```username ALL=(ALL) NOPASSWD:ALL```
-6. Updating the system.
+7. Updating the system.
 ```
 sudo su -
 apt-get update && apt-get dist-upgrade
 ```
 <kbd>^D</kbd>
-6. Setting up a git friendly prompt.
+8. Setting up a git friendly prompt.
 	1. ```editor .bashrc```
 	2. Locate:
 ```
@@ -165,11 +166,11 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[0
 ```
 	4. <kbd>^D</kbd>
 	5. ```ssh host-vm-name```.
-7. Adding yourself to the <code>users</code> group.
+9. Adding yourself to the <code>users</code> group.
 	1. ```sudo usermod -a -G users username```
 	2. <kbd>^D</kbd>
 	3. ```ssh host-vm-name```.
-8. Turn off the vm: ```shutdown -P now```.
+10. Turn off the vm: ```shutdown -P now```.
 
 ## 6. Backing up the vm ##
 1. Locate the <code>.vdi</code> file.
