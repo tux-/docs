@@ -85,3 +85,18 @@ sudo chown luser. /mnt/iserver/
 # You can then use sshfs to mount like this:
 sshfs iserver:/home/iuser/ /mnt/iserver/
 ```
+
+
+Forward X output from one computer to another
+---------------------------------------------
+```bash
+ssh -t sshalias ssh -X yourremotemachinename
+```
+
+Forward X output from a machine behind a router
+-----------------------------------------------
+You need two terminals:
+```bash
+Terminal 1: ssh -N -L 9997:yourremotemachinename:22 yourusernameonremoterouter@remoteipaddress
+Terminal 2: ssh -p 9997 -Xv remoteusernameonyoulocalmachine@localhost
+```
