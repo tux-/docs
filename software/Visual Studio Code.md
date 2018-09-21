@@ -12,7 +12,7 @@ Config
 	"editor.autoClosingBrackets": false,
 	"window.zoomLevel": 0,
 	"editor.wordSeparators": "`~!@#%^&*()-=+[{]}\\|;:'\",.<>/?",
-	"markdown.preview.scrollPreviewWithEditorSelection": false,
+	"markdown.preview.scrollPreviewWithEditor": true,
 	"files.eol": "\n"
 }
 ```
